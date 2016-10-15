@@ -20,13 +20,13 @@ for details.
 Just run the setup script:
 
 ```
-  git clone https://github.com/jandelgado/gitconfig.git ~/.vim &&\
+  git clone https://github.com/jandelgado/vimconfig.git ~/.vim &&\
   cd ~/.vim && sh setup.sh
 ```
 
 or, manually:
 ```
-  git clone https://github.com/jandelgado/gitconfig.git ~/.vim &&\
+  git clone https://github.com/jandelgado/vimconfig.git ~/.vim &&\
   ln -s ~/.vim/vimrc .vimrc &&\
   cd ~/.vim &&\
   git submodule update --init
