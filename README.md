@@ -18,7 +18,6 @@ for details.
 
 # Installation
 Just run the setup script:
-
 ```
   git clone https://github.com/jandelgado/vimconfig.git ~/.vim &&\
   cd ~/.vim && sh setup.sh
@@ -26,10 +25,7 @@ Just run the setup script:
 
 or, manually:
 ```
-  git clone https://github.com/jandelgado/vimconfig.git ~/.vim &&\
-  ln -s ~/.vim/vimrc .vimrc &&\
-  cd ~/.vim &&\
-  git submodule update --init
+  git clone --recursive https://github.com/jandelgado/vimconfig.git ~/.vim && ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 ## To add new plugins from github.com
