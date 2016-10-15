@@ -1,0 +1,5 @@
+colors/
+bundle/*
+*~
+.netrwhist
+.jdvc-installed
