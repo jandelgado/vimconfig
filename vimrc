@@ -31,6 +31,7 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_go_checkers = ['go']
+let g:syntastic_javascript_checkers = ['jshint']
 
 " general settings
 se bg=dark
@@ -54,3 +55,7 @@ endif
 
 set laststatus=2
 set wildmenu
+
+" activate matchit plugin
+source $VIMRUNTIME/macros/matchit.vim
+
