@@ -31,8 +31,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_go_checkers = ['go']
 let g:syntastic_javascript_checkers = ['jshint']
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
 
 " general settings
 se bg=dark
@@ -59,4 +62,16 @@ set wildmenu
 
 " activate matchit plugin
 source $VIMRUNTIME/macros/matchit.vim
+
+" vim-go
+" auto safe on :GoRun etc
+se autowrite
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+" navigation in quicklist
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+let g:go_list_type = "quickfix"
 
