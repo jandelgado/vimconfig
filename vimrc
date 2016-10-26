@@ -1,6 +1,8 @@
 execute pathogen#infect()
 filetype plugin indent on
 
+" note: set TERM to screen-256color when using tmux
+" and start tmux with -2 option so colors are displayed properly.
 se t_Co=256
 
 " solarized
@@ -8,13 +10,12 @@ syntax on
 let g:solarized_termcolors=256
 colorscheme solarized
 
-
 " airline
 se laststatus=2
 let g:airline_theme='dark'
 
 " CTRL-T is next tab
-noremap <C-T> gt
+"noremap <C-T> gt
 
 " mark columns 80+
 let &colorcolumn=join(range(81,999),",")
@@ -38,7 +39,7 @@ se bg=dark
 se ts=4
 se shiftwidth=4
 se expandtab
-se paste
+se pastetoggle=<F2>
 se nobackup
 se number
 se so=2     " scroll offset
