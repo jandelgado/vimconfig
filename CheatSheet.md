@@ -107,3 +107,4 @@ tbd http://vimregex.com/
 | :GoDoc, K       | Open go doc for element under cursor |
 | :GoInfo         | Show function signature for element under cursor|
 | :GoRename name  | Rename element under cursor |
+
