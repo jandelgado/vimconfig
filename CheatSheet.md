@@ -3,15 +3,15 @@ My personal Vim cheat sheet.
 
 General notes:
   * `M` - Meta-Key = Ctrl
-  * \<leader\> - Leader key, re-mapped to `,` in my .vimrc
-Commands/mappings marked with `custom` are specific to my .vimrc file.
+  * `leader` - Leader key, re-mapped to `,` in my .vimrc.
+  * Commands/mappings marked with `custom` are specific to my .vimrc file.
+  * `%` in a command is a substituted with the current filename
 
 ## Cursor movement
 | Command         | Description              |
 | ------------------------------------------- |
 | `M`-E, `M`-Y        |move screen up/down one line|
 | zz, zb, zt      |move line with cursor to middle/bottom/top of screen|
-
 
 ## Buffers
 A buffer is a file loaded to memory for editing.
@@ -42,6 +42,16 @@ A buffer is a file loaded to memory for editing.
 | `M`-W W, `M`-W `M`-W  |Jump to next pane
 | `M`-W\_, `M`-&#124;, `M`-W=|Maximize current pane (\_ vertically, &#124; horizontally), or restore pane (=)|             
 
+## Location- and quickfix list
+The location list ist local to a window while the quickfix list is global (i.e. there can be only 1 quick fix list).
+
+| Command         | Description             |
+| ------------------------------------------- |
+| :copen [height], :ccl |open quick fix window/close    |
+| :lopen [height], :lcl |open location list for current window/close|
+|  `M`-N, `M`-M      | `custom` next, previous element in quicklist |
+| `leader`-a            | `custom` close quicklist |
+
 ## Registers
 tbd
 
@@ -70,8 +80,15 @@ Describes recorded sequences of commands to a register.
 | !`shell-cmd`          |filter selection through `shell-command`, e.g. !sort or !fold -w 20 -s|
 | :normal `register` | execute macro in register `register` on selection |
 
-## Search and replace
+## Search
+
+### Search and replace text
 tbd http://vimregex.com/
+
+### Search in files
+| Command         | Description             |
+| ----------------------------------------- |
+| :vimgrep pattern files |built in grep. Results go to quickfix list. |
 
 ## Command history
 | Command         | Description             |
@@ -79,19 +96,19 @@ tbd http://vimregex.com/
 | q:              |open command history window (editable)  |
 | :history        |view command history     |
 
-## Misc
-| Command         | Description             |
-| ----------------------------------------- |
-| g~iw            |change case of word under cursor |
-
 ## Help
 | Command         | Description             |
 | ----------------------------------------- |
 | :help             |open help              |
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
+## Misc
+| Command         | Description             |
+| ----------------------------------------- |
+| g~iw            |change case of word under cursor |
+
 # Plugins
-## vi`M`-go
+## vim-go
 | Command         | Description             |
 | ----------------------------------------- |
 | :GoInstallBinaries | install additional tools |
@@ -100,11 +117,8 @@ tbd http://vimregex.com/
 | :GoBuild        |                         |
 | :GoTest         |                         |
 | :GoLint, :GoVet, :GoMetaLinter |                         |
-|  `M`-N, `M`-M      | `custom` next, previous element in quicklist |
-| \<leader\>a            | `custom` close quicklist |
 | :GoDecls, :GoDeclsDir | Show function declarations using Ctlr-P plugin |
 | ]], [[          | Jump to next,previous function declaration |
 | :GoDoc, K       | Open go doc for element under cursor |
 | :GoInfo         | Show function signature for element under cursor|
 | :GoRename name  | Rename element under cursor |
-

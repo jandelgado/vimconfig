@@ -14,7 +14,7 @@ for details.
   *  [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
   *  [vim airline](https://github.com/vim-airline/vim-airline)
   *  [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized.git)
-  *  [syntastic](https://github.com/scrooloose/syntastic.git)
+  *  [vim-go](https://github.com/fatih/vim-go)
 
 # Installation
 Just run the setup script:
@@ -31,6 +31,7 @@ or, manually:
 ## To add new plugins from github.com
 ```
   git submodule add https://github.com/module.git ~/.vim/bundle/module
+  git checkout <tag>  # if you want to stick to specific version
   git add .
   git commit -m "added new plugin"
 ```
