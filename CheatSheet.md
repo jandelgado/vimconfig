@@ -10,15 +10,15 @@ General notes:
 ## Cursor movement
 
 | Command         | Description              |
-| ------------------------------------------- |
-| `M`-E, `M`-Y        | move screen up/down one line|
+| --------------- | ------------------------ |
+| `M`-E, `M`-Y    | move screen up/down one line|
 | zz, zb, zt      | move line with cursor to middle/bottom/top of screen|
 
 ## Buffers
 A buffer is a file loaded to memory for editing.
 
 | Command         | Description              |
-| ------------------------------------------- |
+| --------------- | ------------------------ |
 | :e `filename`   |open new file for editing in a new buffer|
 | :new, :vnew     | create new buffer, splitting pane horizontally or vertically|
 | :ls, :buffers   |list buffers              |
@@ -31,13 +31,13 @@ A buffer is a file loaded to memory for editing.
 
 ## Undo and redo
 | Command         | Description              |
-| -------------------------------------------|
+| --------------- |--------------------------|
 | u               | undo                     |
 | `M`-R             | redo                     |
 
 ## Panes and windows
 | Command         | Description             |
-| ------------------------------------------- |
+| --------------- | ----------------------- |
 | :sp             |horizontally split window |
 | :vsp            |vertically split window   |
 | `M`-W W, `M`-W `M`-W  |Jump to next pane
@@ -47,7 +47,7 @@ A buffer is a file loaded to memory for editing.
 The location list ist local to a window while the quickfix list is global (i.e. there can be only 1 quick fix list).
 
 | Command         | Description             |
-| ------------------------------------------- |
+| --------------- | ----------------------- |
 | :copen [height], :ccl |open quick fix window/close    |
 | :lopen [height], :lcl |open location list for current window/close|
 |  `M`-N, `M`-M      | `custom` next, previous element in quicklist |
@@ -60,20 +60,20 @@ tbd
 Describes recorded sequences of commands to a register.
 
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | q`register``commands`q |Record sequence of `commands` to given `register`.|
 | @`register`           |exectue macro stored in register|
 
 ## Selecting text
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | V or v          |Enter visual mode        |
 | `M`-V             |Enter visual mode (Columns)|
 | vip             | select current paragraph |
 
 ### While in visual mode
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | o               |jump to other end of selection        |
 | <, >            | shift left, shift right
 | c, y, d, ~         | change, yank, delete, upper case |
@@ -88,18 +88,18 @@ tbd http://vimregex.com/
 
 ### Search in files
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | :vimgrep pattern files |built in grep. Results go to quickfix list. |
 
 ## Command history
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------  | ----------------------- |
 | q:              |open command history window (editable)  |
 | :history        |view command history     |
 
 ## ctags
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | `M`+]            |Jump to definition       |
 | `M`+T          | Jump back from definition |
 | g]             |show all definitions       |
@@ -107,7 +107,7 @@ tbd http://vimregex.com/
 
 ## diff
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | :windo diffthis |diff open buffers (hsplit,vsplit) |
 | :windo diffoff  |end diff mode            |
 | \]c,  \[c         |navigate in changes      |
@@ -115,21 +115,21 @@ tbd http://vimregex.com/
 
 ## Help
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | :help             |open help              |
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
 
 ## Misc
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | g~iw            |change case of word under cursor |
 
 
 # Plugins
 ## CtrlP
 | Command                | Description             |
-| ------------------------------------------------ |
+| ---------------------- | ----------------------- |
 | :CtrlPTags, `leader`+. | `custom` open tag list  |
 | `leader`+f             | cycle through modes  |
 | `leader`+d             | switch to filename only search mode|
@@ -137,8 +137,9 @@ tbd http://vimregex.com/
 
 ## Nerd Commenter
   * https://github.com/scrooloose/nerdcommenter
+
 | Command                | Description             |
-| ------------------------------------------------ |
+| ---------------------- | ----------------------- |
 | `leader`+cc  | comment out block  |
 | `leader`+cn  | comment out block, force nesting  |
 | `leader`+ci  | toggle comments  |
@@ -146,7 +147,7 @@ tbd http://vimregex.com/
 
 ## vim-go
 | Command         | Description             |
-| ----------------------------------------- |
+| --------------- | ----------------------- |
 | :GoInstallBinaries | install additional tools |
 | :GoDef, `M`-]     | Jump to definition, `M`-O or `M`-T to go back.|
 | :GoRun          |                         |
@@ -158,5 +159,3 @@ tbd http://vimregex.com/
 | :GoDoc, K       | Open go doc for element under cursor |
 | :GoInfo         | Show function signature for element under cursor|
 | :GoRename name  | Rename element under cursor |
-
-
