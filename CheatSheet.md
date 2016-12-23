@@ -8,10 +8,11 @@ General notes:
   * `%` in a command is a substituted with the current filename
 
 ## Cursor movement
+
 | Command         | Description              |
 | ------------------------------------------- |
-| `M`-E, `M`-Y        |move screen up/down one line|
-| zz, zb, zt      |move line with cursor to middle/bottom/top of screen|
+| `M`-E, `M`-Y        | move screen up/down one line|
+| zz, zb, zt      | move line with cursor to middle/bottom/top of screen|
 
 ## Buffers
 A buffer is a file loaded to memory for editing.
