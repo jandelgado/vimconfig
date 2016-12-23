@@ -104,16 +104,26 @@ tbd http://vimregex.com/
 | g]             |show all definitions       |
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
+## diff
+| Command         | Description             |
+| ----------------------------------------- |
+| :windo diffthis |diff open buffers (hsplit,vsplit) |
+| :windo diffoff  |end diff mode            |
+| \]c,  \[c         |navigate in changes      |
+
+
 ## Help
 | Command         | Description             |
 | ----------------------------------------- |
 | :help             |open help              |
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
+
 ## Misc
 | Command         | Description             |
 | ----------------------------------------- |
 | g~iw            |change case of word under cursor |
+
 
 # Plugins
 ## CtrlP
