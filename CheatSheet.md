@@ -96,6 +96,14 @@ tbd http://vimregex.com/
 | q:              |open command history window (editable)  |
 | :history        |view command history     |
 
+## ctags
+| Command         | Description             |
+| ----------------------------------------- |
+| `M`+]            |Jump to definition       |
+| `M`+T          | Jump back from definition |
+| g]             |show all definitions       |
+| `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
+
 ## Help
 | Command         | Description             |
 | ----------------------------------------- |
@@ -108,6 +116,15 @@ tbd http://vimregex.com/
 | g~iw            |change case of word under cursor |
 
 # Plugins
+## CtrlP
+| Command                | Description             |
+| ------------------------------------------------ |
+| :CtrlPTags, `leader`+. | `custom` open tag list  |
+| `leader`+f             | cycle through modes  |
+| `leader`+d             | switch to filename only search mode|
+| ..                     | cd .. |
+|
+
 ## vim-go
 | Command         | Description             |
 | ----------------------------------------- |
