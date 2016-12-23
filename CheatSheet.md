@@ -133,7 +133,15 @@ tbd http://vimregex.com/
 | `leader`+f             | cycle through modes  |
 | `leader`+d             | switch to filename only search mode|
 | ..                     | cd .. |
-|
+
+## Nerd Commenter
+  * https://github.com/scrooloose/nerdcommenter
+| Command                | Description             |
+| ------------------------------------------------ |
+| `leader`+cc  | comment out block  |
+| `leader`+cn  | comment out block, force nesting  |
+| `leader`+ci  | toggle comments  |
+
 
 ## vim-go
 | Command         | Description             |
@@ -149,3 +157,5 @@ tbd http://vimregex.com/
 | :GoDoc, K       | Open go doc for element under cursor |
 | :GoInfo         | Show function signature for element under cursor|
 | :GoRename name  | Rename element under cursor |
+
+
