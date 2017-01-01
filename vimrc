@@ -26,6 +26,9 @@ se hidden
 se backspace=indent,eol,start
 se autoindent
 
+" file search
+se path+=**
+
 " searching
 se smartcase    " ignore case when lowercase, case-sensitve otherwise
 se hlsearch
@@ -53,9 +56,9 @@ endif
 set laststatus=2
 set wildmenu
 
-" navigation in quicklist
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+" navigation in quicklist: ALT+N, ALT+M
+map <A-n> :cnext<CR>
+map <A-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " auto close quickfix window if no other windows are opened
@@ -112,4 +115,8 @@ autocmd FileType go nnoremap <leader>v  :GoVet<CR>
 
 " *** CtrlP
 nnoremap <leader>. :CtrlPTag<cr>
+
+" *** nerd tree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
