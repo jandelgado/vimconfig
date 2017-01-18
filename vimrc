@@ -58,7 +58,7 @@ set wildmenu
 
 " buffer navigation
 nnoremap <F12>   :bn<CR>      " next buffer
-nnoremap <S-F12> :bp<CR>      " previous buffer
+nnoremap <F11>   :bp<CR>      " previous buffer
 nnoremap <F5>    :buffers<CR>:buffer<Space>
 
 " navigation in quicklist: ALT+N, ALT+M
