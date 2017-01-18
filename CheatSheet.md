@@ -22,11 +22,14 @@ A buffer is a file loaded to memory for editing.
 | :e `filename`   |open new file for editing in a new buffer|
 | :new, :vnew     | create new buffer, splitting pane horizontally or vertically|
 | :ls, :buffers   |list buffers              |
+| `F5`            | `custom` list buffers and select a buffer |
 | :b`num`         |switch to buffer `num`    |
 | :bdelete `num`  |delete buffer `num`|
 | `M`-6             |switch buffers in active pane|
 | `num``M`-W             |switch buffers in active pane|
 | :ball           |open all buffers           |
+| :bn, :bp        |next, previous buffer      |
+| `F12`, `S-F12`  |`custom` next, previous buffer |
 
 
 ## Undo and redo
@@ -149,9 +152,10 @@ tbd http://vimregex.com/
 | Command         | Description             |
 | --------------- | ----------------------- |
 | :GoInstallBinaries | install additional tools |
-| :GoDef, `M`-]     | Jump to definition, `M`-O or `M`-T to go back.|
+| :GoDef, `M`-]   | Jump to definition, `M`-O or `M`-T to go back.|
 | :GoRun          |                         |
 | :GoBuild        |                         |
+| :GoFmt          |                         |
 | :GoTest         |                         |
 | :GoLint, :GoVet, :GoMetaLinter |                         |
 | :GoDecls, :GoDeclsDir | Show function declarations using Ctlr-P plugin |
