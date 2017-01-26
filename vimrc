@@ -117,6 +117,8 @@ autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
 autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
 autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>
 autocmd FileType go nnoremap <leader>v  :GoVet<CR>
+autocmd FileType go nnoremap <leader>l  :GoAlternate<CR>
+autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
 
 " *** CtrlP
 nnoremap <leader>. :CtrlPTag<cr>
