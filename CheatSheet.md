@@ -109,11 +109,18 @@ tbd http://vimregex.com/
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
 ## diff
+`$ vimdiff file1 file2`
 | Command         | Description             |
 | --------------- | ----------------------- |
 | :windo diffthis |diff open buffers (hsplit,vsplit) |
 | :windo diffoff  |end diff mode            |
-| \]c,  \[c         |navigate in changes      |
+| \]c,  \[c         |navigate  in changes      |
+| do, dp          |diff obtain (other to this), diff put (this to other)  | 
+| :diffget, :diffput | copy blocks in visual mode |
+| zo              |unfold, unhide           |
+| zc              |refold, rehide           |
+| zr              |unfold both files completely |
+| zm              |fold both files completely |
 
 
 ## Help
