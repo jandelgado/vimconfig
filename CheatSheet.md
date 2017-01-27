@@ -136,6 +136,7 @@ tbd http://vimregex.com/
 | :CtrlPTags, `leader`+. | `custom` open tag list  |
 | `leader`+f             | cycle through modes  |
 | `leader`+d             | switch to filename only search mode|
+| `leader`+.             | `custom` open in ctag mode |
 | ..                     | cd .. |
 
 ## Nerd Commenter
@@ -143,9 +144,11 @@ tbd http://vimregex.com/
 
 | Command                | Description             |
 | ---------------------- | ----------------------- |
+| `leader`+ci\<space\>  | toggle block  |
 | `leader`+cc  | comment out block  |
 | `leader`+cn  | comment out block, force nesting  |
-| `leader`+ci  | toggle comments  |
+| `leader`+cc  | comment out block using block comment  |
+| `leader`+ci  | invert comments  |
 
 
 ## vim-go
