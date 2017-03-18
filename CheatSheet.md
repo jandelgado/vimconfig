@@ -71,6 +71,8 @@ Describes recorded sequences of commands to a register.
 | Command         | Description             |
 | --------------- | ----------------------- |
 | V or v          |Enter visual mode        |
+| V{              |Select to end of paragraph   |
+| vip             |Select inner paragraph   |
 | `M`-V             |Enter visual mode (Columns)|
 | vip             | select current paragraph |
 
@@ -79,9 +81,9 @@ Describes recorded sequences of commands to a register.
 | --------------- | ----------------------- |
 | o               |jump to other end of selection        |
 | <, >            | shift left, shift right
-| c, y, d, ~         | change, yank, delete, upper case |
+| c, y, d, ~      | change, yank, delete, upper case |
 | gq              | format lines to 'textwidth' length |
-| !`shell-cmd`          |filter selection through `shell-command`, e.g. !sort or !fold -w 20 -s|
+| !`shell-cmd`    |filter selection through `shell-command`, e.g. !sort or !fold -w 20 -s|
 | :normal `register` | execute macro in register `register` on selection |
 
 ## Search
