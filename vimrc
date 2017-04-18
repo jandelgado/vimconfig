@@ -1,5 +1,5 @@
 " list of dsiabled plugins
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['syntastic']
 execute pathogen#infect()
 filetype plugin indent on
 
