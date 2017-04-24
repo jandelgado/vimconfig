@@ -71,6 +71,8 @@ Describes recorded sequences of commands to a register.
 | Command         | Description             |
 | --------------- | ----------------------- |
 | V or v          |Enter visual mode        |
+| V{              |Select to end of paragraph   |
+| vip             |Select inner paragraph   |
 | `M`-V             |Enter visual mode (Columns)|
 | vip             | select current paragraph |
 
@@ -79,9 +81,9 @@ Describes recorded sequences of commands to a register.
 | --------------- | ----------------------- |
 | o               |jump to other end of selection        |
 | <, >            | shift left, shift right
-| c, y, d, ~         | change, yank, delete, upper case |
+| c, y, d, ~      | change, yank, delete, upper case |
 | gq              | format lines to 'textwidth' length |
-| !`shell-cmd`          |filter selection through `shell-command`, e.g. !sort or !fold -w 20 -s|
+| !`shell-cmd`    |filter selection through `shell-command`, e.g. !sort or !fold -w 20 -s|
 | :normal `register` | execute macro in register `register` on selection |
 
 ## Search
@@ -109,11 +111,18 @@ tbd http://vimregex.com/
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
 ## diff
+`$ vimdiff file1 file2`
 | Command         | Description             |
 | --------------- | ----------------------- |
 | :windo diffthis |diff open buffers (hsplit,vsplit) |
 | :windo diffoff  |end diff mode            |
-| \]c,  \[c         |navigate in changes      |
+| \]c,  \[c         |navigate  in changes      |
+| do, dp          |diff obtain (other to this), diff put (this to other)  | 
+| :diffget, :diffput | copy blocks in visual mode |
+| zo              |unfold, unhide           |
+| zc              |refold, rehide           |
+| zr              |unfold both files completely |
+| zm              |fold both files completely |
 
 
 ## Help
@@ -136,6 +145,7 @@ tbd http://vimregex.com/
 | :CtrlPTags, `leader`+. | `custom` open tag list  |
 | `leader`+f             | cycle through modes  |
 | `leader`+d             | switch to filename only search mode|
+| `leader`+.             | `custom` open in ctag mode |
 | ..                     | cd .. |
 
 ## Nerd Commenter
@@ -143,9 +153,11 @@ tbd http://vimregex.com/
 
 | Command                | Description             |
 | ---------------------- | ----------------------- |
+| `leader`+ci\<space\>  | toggle block  |
 | `leader`+cc  | comment out block  |
 | `leader`+cn  | comment out block, force nesting  |
-| `leader`+ci  | toggle comments  |
+| `leader`+cc  | comment out block using block comment  |
+| `leader`+ci  | invert comments  |
 
 
 ## vim-go

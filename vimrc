@@ -62,8 +62,8 @@ nnoremap <F11>   :bp<CR>      " previous buffer
 nnoremap <F5>    :buffers<CR>:buffer<Space>
 
 " navigation in quicklist: ALT+N, ALT+M
-map <A-n> :cnext<CR>
-map <A-m> :cprevious<CR>
+nnoremap <leader>n :cnext<CR>
+nnoremap <leader>m :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " auto close quickfix window if no other windows are opened
@@ -117,6 +117,8 @@ autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
 autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
 autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>
 autocmd FileType go nnoremap <leader>v  :GoVet<CR>
+autocmd FileType go nnoremap <leader>l  :GoAlternate<CR>
+autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
 
 " *** CtrlP
 nnoremap <leader>. :CtrlPTag<cr>
