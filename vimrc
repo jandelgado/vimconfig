@@ -1,5 +1,5 @@
 " list of dsiabled plugins
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['ale', 'syntastic', 'Xvim-colors-solarized']
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -62,9 +62,9 @@ nnoremap <F11>   :bp<CR>      " previous buffer
 nnoremap <F5>    :buffers<CR>:buffer<Space>
 
 " navigation in quicklist: ALT+N, ALT+M
-nnoremap <leader>n :cnext<CR>
-nnoremap <leader>m :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+map <leader>n :lnext<CR>
+map <leader>m :lprevious<CR>
+map <leader>a :lclose<CR>
 
 " auto close quickfix window if no other windows are opened
 aug QFClose
@@ -112,7 +112,7 @@ let g:go_metalinter_autosave = 1
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_enabled = ['vet', 'golint']
-let g:go_list_type = "quickfix"
+"let g:go_list_type = "quickfix"
 autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
 autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
 autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>
