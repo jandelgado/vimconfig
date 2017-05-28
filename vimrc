@@ -1,5 +1,5 @@
 " list of dsiabled plugins
-let g:pathogen_disabled = ['ale', 'syntastic', 'Xvim-colors-solarized']
+let g:pathogen_disabled = ['syntastic']
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -15,11 +15,14 @@ nnoremap - :
 highlight MyLineTooLongMarker ctermbg=magenta
 set colorcolumn=79
 
-se ts=4
+" tab settings: spaces as tabs, tab width=4
+se tabstop=4
 se shiftwidth=4
 se expandtab
+se softtabstop=0
+se smarttab
+
 se pastetoggle=<F2>
-se nobackup
 se number
 se so=2     " scroll offset
 se hidden
@@ -37,7 +40,7 @@ se incsearch
 se history=1000
 se undolevels=1000
 
-se nobackup
+se backup
 se noswapfile
 
 " set whitspace characters to show with 'set list' command
@@ -126,4 +129,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 " *** nerd tree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" *** vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
