@@ -132,6 +132,12 @@ tbd http://vimregex.com/
 | `M`-] or `mouse-left-doubleclick` |jump to topic under cursor. `M`-T or `M`-O, g`mouse-right` to go back. `set mouse=a` must be set for mouse support. |
 
 
+## netrw
+| Command         | Description             |
+| --------------- | ----------------------- |
+| :Explore, :Sexplore,:Vexplore|Open netrw file browser|
+| `F3`, :Lexplore | ` custom` toggle netrw window |
+
 ## Misc
 | Command         | Description             |
 | --------------- | ----------------------- |

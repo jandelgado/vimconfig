@@ -64,10 +64,10 @@ nnoremap <F12>   :bn<CR>      " next buffer
 nnoremap <F11>   :bp<CR>      " previous buffer
 nnoremap <F5>    :buffers<CR>:buffer<Space>
 
-" navigation in quicklist: ALT+N, ALT+M
-map <leader>n :lnext<CR>
-map <leader>m :lprevious<CR>
-map <leader>a :lclose<CR>
+" navigation in location list
+nnoremap <leader>n :lnext<CR>
+nnoremap <leader>m :lprevious<CR>
+nnoremap <leader>a :lclose<CR>
 
 " auto close quickfix window if no other windows are opened
 aug QFClose
@@ -78,6 +78,20 @@ aug END
 " quickly edit/reload vimrc file
 nmap <silent> <leader>ev :e  $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+map <silent> <F3> :Lexplore<CR>
+
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 " activate matchit plugin
 source $VIMRUNTIME/macros/matchit.vim
@@ -92,7 +106,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -110,10 +124,9 @@ let g:airline_theme='dark'
 " *** vim-go
 " auto safe on :GoRun etc
 "se autowrite
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0    " don't run meta linter on save
 "let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_enabled = ['vet', 'golint']
 "let g:go_list_type = "quickfix"
 autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
@@ -122,13 +135,11 @@ autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>
 autocmd FileType go nnoremap <leader>v  :GoVet<CR>
 autocmd FileType go nnoremap <leader>l  :GoAlternate<CR>
 autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
+autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
 
 " *** CtrlP
 nnoremap <leader>. :CtrlPTag<cr>
 
-" *** nerd tree
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " *** vim-markdown
 let g:vim_markdown_folding_disabled = 1
