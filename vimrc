@@ -138,9 +138,19 @@ autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
 autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
 
 " *** CtrlP
-nnoremap <leader>. :CtrlPTag<cr>
-
+" nnoremap <leader>. :CtrlPTag<cr>
 
 " *** vim-markdown
 let g:vim_markdown_folding_disabled = 1
+
+" *** nerd commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
 
