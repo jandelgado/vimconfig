@@ -1,4 +1,4 @@
-" list of dsiabled plugins
+" list of disabled plugins
 let g:pathogen_disabled = ['syntastic']
 execute pathogen#infect()
 filetype plugin indent on
