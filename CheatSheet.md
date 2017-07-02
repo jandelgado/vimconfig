@@ -1,31 +1,33 @@
 # Vim cheat sheet
+
 JD's personal vim cheat sheet.
 
 General notes:
-  * `M` - Meta-Key = Ctrl
-  * `leader` - Leader key, re-mapped to `,` in my .vimrc.
-  * Commands/mappings marked with `custom` are specific to my .vimrc file.
-  * `%` in a command is a substituted with the current filename
+
+* `M` - Meta-Key = Ctrl
+* `leader` - Leader key, re-mapped to `,` in my .vimrc.
+* Commands/mappings marked with `custom` are specific to my .vimrc file.
+* `%` in a command is a substituted with the current filename
 
 <!-- vim-markdown-toc GFM -->
-    * [Cursor movement](#cursor-movement)
-    * [Buffers](#buffers)
-    * [Undo and redo](#undo-and-redo)
-    * [Panes and windows](#panes-and-windows)
-    * [Location- and quickfix list](#location--and-quickfix-list)
-    * [Registers](#registers)
-        * [Macros](#macros)
-    * [Selecting text](#selecting-text)
-        * [While in visual mode](#while-in-visual-mode)
-    * [Search](#search)
-        * [Search and replace text](#search-and-replace-text)
-        * [Search in files](#search-in-files)
-    * [Command history](#command-history)
-    * [ctags](#ctags)
-    * [diff](#diff)
-    * [Help](#help)
-    * [netrw](#netrw)
-    * [Misc](#misc)
+* [Cursor movement](#cursor-movement)
+* [Buffers](#buffers)
+* [Undo and redo](#undo-and-redo)
+* [Panes and windows](#panes-and-windows)
+* [Location- and quickfix list](#location--and-quickfix-list)
+* [Registers](#registers)
+* [Macros](#macros)
+* [Selecting text](#selecting-text)
+    * [While in visual mode](#while-in-visual-mode)
+* [Search](#search)
+    * [Search and replace text](#search-and-replace-text)
+    * [Search in files](#search-in-files)
+* [Command history](#command-history)
+* [ctags](#ctags)
+* [diff](#diff)
+* [Help](#help)
+* [netrw](#netrw)
+* [Misc](#misc)
 * [Plugins](#plugins)
     * [CtrlP](#ctrlp)
     * [Nerd Commenter](#nerd-commenter)
@@ -35,6 +37,7 @@ General notes:
     * [vim-tabular](#vim-tabular)
 
 <!-- vim-markdown-toc -->
+
 ## Cursor movement
 
 | Command      | Description                                          |
@@ -43,6 +46,7 @@ General notes:
 | zz, zb, zt   | move line with cursor to middle/bottom/top of screen |
 
 ## Buffers
+
 A buffer is a file loaded to memory for editing.
 
 | Command        | Description                                                  |
@@ -59,14 +63,15 @@ A buffer is a file loaded to memory for editing.
 | :bn, :bp       | next, previous buffer                                        |
 | `F12`, `S-F12` | `custom` next, previous buffer                               |
 
-
 ## Undo and redo
+
 | Command | Description |
 |---------|-------------|
 | u       | undo        |
 | `M`-R   | redo        |
 
 ## Panes and windows
+
 | Command                          | Description                                                                     |
 |----------------------------------|---------------------------------------------------------------------------------|
 | :sp                              | horizontally split window                                                       |
@@ -76,6 +81,7 @@ A buffer is a file loaded to memory for editing.
 | `M`-W\<, `M`-W\>, `M`-W+, `M`-W- | Resize pane vertically or horizontally                                           |
 
 ## Location- and quickfix list
+
 The location list ist local to a window while the quickfix list is global (i.e. there can be only 1 quick fix list).
 
 | Command               | Description                                  |
@@ -86,9 +92,11 @@ The location list ist local to a window while the quickfix list is global (i.e. 
 | `leader`-a            | `custom` close quicklist                     |
 
 ## Registers
+
 tbd
 
-### Macros
+## Macros
+
 Describes recorded sequences of commands to a register.
 
 | Command                | Description                                        |
@@ -97,6 +105,7 @@ Describes recorded sequences of commands to a register.
 | @`register`            | exectue macro stored in register                   |
 
 ## Selecting text
+
 | Command | Description                 |
 |---------|-----------------------------|
 | V or v  | Enter visual mode           |
@@ -106,6 +115,7 @@ Describes recorded sequences of commands to a register.
 | vip     | select current paragraph    |
 
 ### While in visual mode
+
 | Command            | Description                                                            |
 |--------------------|------------------------------------------------------------------------|
 | o                  | jump to other end of selection                                         |
@@ -118,20 +128,24 @@ Describes recorded sequences of commands to a register.
 ## Search
 
 ### Search and replace text
+
 tbd http://vimregex.com/
 
 ### Search in files
+
 | Command                | Description                                 |
 |------------------------|---------------------------------------------|
 | :vimgrep pattern files | built in grep. Results go to quickfix list. |
 
 ## Command history
+
 | Command  | Description                            |
 |----------|----------------------------------------|
 | q:       | open command history window (editable) |
 | :history | view command history                   |
 
 ## ctags
+
 | Command                           | Description                                             |
 |-----------------------------------|---------------------------------------------------------|
 | `M`+]                             | Jump to definition                                      |
@@ -142,7 +156,9 @@ tbd http://vimregex.com/
 |                                   | set for mouse support.                                  |
 
 ## diff
+
 `$ vimdiff file1 file2`
+
 | Command            | Description                                           |
 |--------------------|-------------------------------------------------------|
 | :windo diffthis    | diff open buffers (hsplit,vsplit)                     |
@@ -155,8 +171,8 @@ tbd http://vimregex.com/
 | zr                 | unfold both files completely                          |
 | zm                 | fold both files completely                            |
 
-
 ## Help
+
 | Command                           | Description                                  |
 |-----------------------------------|----------------------------------------------|
 | :help                             | open help                                    |
@@ -164,21 +180,23 @@ tbd http://vimregex.com/
 |                                   | `M`-T or `M`-O, g`mouse-right` to go back.   |
 |                                   | `set mouse=a` must be set for mouse support. |
 
-
 ## netrw
+
 | Command                       | Description                   |
 |-------------------------------|-------------------------------|
 | :Explore, :Sexplore,:Vexplore | Open netrw file browser       |
 | `F3`, :Lexplore               | ` custom` toggle netrw window |
 
 ## Misc
+
 | Command | Description                      |
 |---------|----------------------------------|
 | g~iw    | change case of word under cursor |
 
+## Plugins
 
-# Plugins
-## CtrlP
+### CtrlP
+
 | Command                | Description                         |
 |------------------------|-------------------------------------|
 | :CtrlPTags, `leader`+. | `custom` open tag list              |
@@ -187,8 +205,9 @@ tbd http://vimregex.com/
 | `leader`+.             | `custom` open in ctag mode          |
 | ..                     | cd ..                               |
 
-## Nerd Commenter
-  * https://github.com/scrooloose/nerdcommenter
+### Nerd Commenter
+
+* https://github.com/scrooloose/nerdcommenter
 
 | Command              | Description                           |
 |----------------------|---------------------------------------|
@@ -198,8 +217,8 @@ tbd http://vimregex.com/
 | `leader`+cc          | comment out block using block comment |
 | `leader`+ci          | invert comments                       |
 
+### vim-go
 
-## vim-go
 | Command                        | Description                                      |
 |--------------------------------|--------------------------------------------------|
 | :GoInstallBinaries             | install additional tools                         |
@@ -215,25 +234,29 @@ tbd http://vimregex.com/
 | :GoInfo                        | Show function signature for element under cursor |
 | :GoRename name                 | Rename element under cursor                      |
 
-## vim-markdown
-  * https://github.com/plasticboy/vim-markdown
+### vim-markdown
+
+* https://github.com/plasticboy/vim-markdown
 
 | Command | Description |
 | ------- | ----------- |
 | :TableFormat | format table under cursor |
 | :Toc    | create a quickfix vertical window navigable table of contents with the headers |
 
-## vim-markdown-toc
-  * https://github.com/mzlogin/vim-markdown-toc
+### vim-markdown-toc
+
+* https://github.com/mzlogin/vim-markdown-toc
 
 | Command          | Description                      |
 |------------------|----------------------------------|
 | :GenTocGFM       | Generate toc in GFM link style.  |
 | :GenTocRedcarpet | Generate toc in red carpet style |
 
-## vim-tabular
-  * https://github.com/godlygeek/tabular
+### vim-tabular
+
+* https://github.com/godlygeek/tabular
 
 | Command     | Description                           |
 |-------------|---------------------------------------|
 | :Tabluar /, | create table for colon separated text |
+
