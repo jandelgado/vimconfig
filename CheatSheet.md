@@ -9,6 +9,8 @@ General notes:
 * Commands/mappings marked with `custom` are specific to my .vimrc file.
 * `%` in a command is a substituted with the current filename
 
+## Contents
+
 <!-- vim-markdown-toc GFM -->
 * [Cursor movement](#cursor-movement)
 * [Buffers](#buffers)
