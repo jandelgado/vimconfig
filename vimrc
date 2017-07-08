@@ -21,6 +21,7 @@ se shiftwidth=4
 se expandtab
 se softtabstop=0
 se smarttab
+autocmd FileType make setlocal noexpandtab
 
 se pastetoggle=<F2>
 se number
