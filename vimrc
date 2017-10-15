@@ -8,6 +8,7 @@ filetype plugin indent on
 se t_Co=256
 
 " *** general settings
+se tags=tags;/
 let mapleader=","               " change map leader to , key
 nnoremap - :
 
@@ -130,6 +131,7 @@ let g:go_metalinter_autosave = 0    " don't run meta linter on save
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_enabled = ['vet', 'golint']
 "let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
 autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
 autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
 autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>

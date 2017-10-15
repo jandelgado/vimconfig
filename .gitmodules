@@ -34,3 +34,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
