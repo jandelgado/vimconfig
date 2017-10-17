@@ -120,6 +120,7 @@ colorscheme solarized
 se background=dark " order has an effect on colors - looks better for me
 
 " *** airline
+let g:airline_powerline_fonts = 1
 se laststatus=2
 let g:airline_theme='dark'
 
@@ -149,10 +150,8 @@ let g:vim_markdown_folding_disabled = 1
 " *** nerd commenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
-
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
