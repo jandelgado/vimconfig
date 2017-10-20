@@ -34,3 +34,12 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule "/home/jdelgado/.vim/bundle/lightline.vim"]
+	path = /home/jdelgado/.vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "bundle/lightline.vim"]
+	path = bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

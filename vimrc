@@ -1,5 +1,5 @@
 " list of disabled plugins
-let g:pathogen_disabled = ['']
+let g:pathogen_disabled = ['vim-airline']
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -54,6 +54,10 @@ nnoremap <leader>w :set list!<CR>
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
+
+" jump to tag
+nnoremap ü <C-]>
+nnoremap Ü <C-T>
 
 " CTRL-T is next tab
 "noremap <C-T> gt
@@ -117,12 +121,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:solarized_termcolors=256
 syntax on
 colorscheme solarized
-se background=dark " order has an effect on colors - looks better for me
-
-" *** airline
-let g:airline_powerline_fonts = 1
-se laststatus=2
-let g:airline_theme='dark'
+"se background=dark " order has an effect on colors - looks better for me
 
 " *** vim-go
 " auto safe on :GoRun etc
@@ -159,4 +158,19 @@ let g:NERDDefaultAlign = 'left'
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" *** lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+se laststatus=2   " always show status
+
+set rtp+=~/.fzf
 

@@ -15,7 +15,7 @@ for details.
 
 ## Plugins
 
-* [vim airline](https://github.com/vim-airline/vim-airline)
+* [vim lightline](https://github.com/itchyny/lightline.vim)
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized.git)
 * [vim-go](https://github.com/fatih/vim-go)
 * [ale](https://github.com/w0rp/ale)
@@ -24,6 +24,7 @@ for details.
 * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [tabular](https://github.com/godlygeek/tabular)
+* [fzf](https://github.com/junegunn/fzf.vim)
 
 ## Installation
 
