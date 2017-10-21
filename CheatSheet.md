@@ -37,6 +37,8 @@ General notes:
     * [vim-markdown](#vim-markdown)
     * [vim-markdown-toc](#vim-markdown-toc)
     * [vim-tabular](#vim-tabular)
+    * [fzf.vim](#fzfvim)
+    * [fugitive](#fugitive)
 
 <!-- vim-markdown-toc -->
 
@@ -261,4 +263,23 @@ tbd http://vimregex.com/
 | Command     | Description                           |
 |-------------|---------------------------------------|
 | :Tabluar /, | create table for colon separated text |
+
+### fzf.vim
+
+* https://github.com/junegunn/fzf.vim
+
+| Command           | Description            |
+|-------------------|------------------------|
+| :Files            | files                  |
+| :GFiles, :GFiles? | git files, git status  |
+| :Colors           | Color themes           |
+| :Buffers          | Open buffers           |
+| :Commits          | Git commmit (fugitive) |
+| :Command          | List commands          |
+
+### fugitive
+* https://github.com/tpope/vim-fugitive
+
+ * Gstatus, Glog, GBlame, Gdiff, Ggrep, Gcommit, Gread (git checkout -- file), Git
+
 

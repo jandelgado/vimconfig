@@ -70,10 +70,10 @@ nnoremap <F12>   :bn<CR>      " next buffer
 nnoremap <F11>   :bp<CR>      " previous buffer
 nnoremap <F5>    :buffers<CR>:buffer<Space>
 
-" navigation in location list
-nnoremap <leader>n :lnext<CR>
-nnoremap <leader>m :lprevious<CR>
-nnoremap <leader>a :lclose<CR>
+" navigation in quickfix list
+nnoremap ö :cnext<CR>
+nnoremap Ö :cprevious<CR>
+"nnoremap <leader>a :cclose<CR>
 
 " auto close quickfix window if no other windows are opened
 aug QFClose
