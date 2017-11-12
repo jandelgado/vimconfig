@@ -4,3 +4,4 @@ colors/
 .jdvc-installed
 bundle/vim-6502
 bundle/m6502
+bundle/undotree
