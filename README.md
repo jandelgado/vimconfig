@@ -50,7 +50,7 @@ Plugins are installed as git submodules.
   git commit 
 ```
 
-### Ad new plugins from github.com
+### Add new plugins from github.com
 
 ```
   git submodule add https://github.com/module.git ~/.vim/bundle/module
