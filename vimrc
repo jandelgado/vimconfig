@@ -8,6 +8,7 @@ filetype plugin indent on
 se t_Co=256
 
 " *** general settings
+se mouse=                       " turn off mouse
 se tags=tags;/
 let mapleader=","               " change map leader to , key
 nnoremap - :
@@ -157,5 +158,21 @@ let g:lightline = {
       \ }
 se laststatus=2   " always show status
 
+" *** fzf
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+nnoremap <silent> <Leader>`        :Marks<CR>
+"imap <c-x><c-k> <plug>(fzf-complete-word)
+"imap <c-x><c-f> <plug>(fzf-complete-path)
+"inoremap <expr> <c-x><c-d> fzf#vim#complete#path('blsd')
+"imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+"imap <c-x><c-l> <plug>(fzf-complete-line)
+"nmap <leader><tab> <plug>(fzf-maps-n)
+"xmap <leader><tab> <plug>(fzf-maps-x)
+"omap <leader><tab> <plug>(fzf-maps-o)
+"
 set rtp+=~/.fzf
 
