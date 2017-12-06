@@ -12,13 +12,12 @@ if [ ! -f $FLAGFILE ]; then
 
   ln -s ~/.vim/vimrc ~/.vimrc
   cd ~/.vim
-  git submodule update --init
+  git submodule update --init --recursive
   touch $FLAGFILE
 
 else 
   cd ~/.vim
   git pull
-  #git submodule foreach --recursive git pull 
-  git submodule update
+  git submodule update --recursive --remote
 fi
 
