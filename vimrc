@@ -1,5 +1,5 @@
 " list of disabled plugins
-let g:pathogen_disabled = ['vim-airline']
+let g:pathogen_disabled = ['vim-airline', 'solarized']
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -103,11 +103,19 @@ map <silent> <F3> :Lexplore<CR>
 " activate matchit plugin
 source $VIMRUNTIME/macros/matchit.vim
 
-" *** solarized
-let g:solarized_termcolors=256
 syntax on
-colorscheme solarized
+
+" *** solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 "se background=dark " order has an effect on colors - looks better for me
+
+" *** gruvbox
+colorscheme gruvbox
+let g:gruvbox_italic=1
+"let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 " *** vim-go
 " auto safe on :GoRun etc
