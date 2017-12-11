@@ -12,6 +12,7 @@ General notes:
 ## Contents
 
 <!-- vim-markdown-toc GFM -->
+
 * [Cursor movement](#cursor-movement)
 * [Buffers](#buffers)
 * [Undo and redo](#undo-and-redo)
@@ -30,6 +31,7 @@ General notes:
 * [Help](#help)
 * [netrw](#netrw)
 * [Misc](#misc)
+* [Custom commands](#custom-commands)
 * [Plugins](#plugins)
     * [CtrlP](#ctrlp)
     * [Nerd Commenter](#nerd-commenter)
@@ -196,6 +198,12 @@ tbd http://vimregex.com/
 | Command | Description                      |
 |---------|----------------------------------|
 | g~iw    | change case of word under cursor |
+
+## Custom commands
+
+| Command | Description               |
+|---------|---------------------------|
+| :TrimWS | trim trailing whitespaces |
 
 ## Plugins
 

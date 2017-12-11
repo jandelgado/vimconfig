@@ -101,9 +101,14 @@ map <silent> <F3> :Lexplore<CR>
 "augroup END
 
 " activate matchit plugin
-source $VIMRUNTIME/macros/matchit.vim
+source $VIMRUNTIME/macros/matchit.vim   
 
 syntax on
+
+" *** custom commands  
+
+" trim trailing witespace in current buffer.
+command TrimWS :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>
 
 " *** solarized
 "let g:solarized_termcolors=256
