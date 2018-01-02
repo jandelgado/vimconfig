@@ -126,7 +126,7 @@ Describes recorded sequences of commands to a register.
 |--------------------|------------------------------------------------------------------------|
 | o                  | jump to other end of selection                                         |
 | <, >               | shift left, shift right                                                |
-| c, y, d, ~         | change, yank, delete, upper case                                       |
+| c, y, d, ~         | change, yank, delete, upper case (e.g. g~iq)                           |
 | gq                 | format lines to 'textwidth' length                                     |
 | !`shell-cmd`       | filter selection through `shell-command`, e.g. !sort or !fold -w 20 -s |
 | :normal `register` | execute macro in register `register` on selection                      |
@@ -154,6 +154,7 @@ tbd http://vimregex.com/
 
 | Command                           | Description                                             |
 |-----------------------------------|---------------------------------------------------------|
+| : set tags=./tags,tags            | Tag search path dir of cur file, cur dir                |
 | `M`+]                             | Jump to definition                                      |
 | `M`+T                             | Jump back from definition                               |
 | g]                                | show all definitions                                    |
@@ -221,13 +222,13 @@ tbd http://vimregex.com/
 
 * https://github.com/scrooloose/nerdcommenter
 
-| Command              | Description                           |
-|----------------------|---------------------------------------|
-| `leader`+ci\<space\> | toggle block                          |
-| `leader`+cc          | comment out block                     |
-| `leader`+cn          | comment out block, force nesting      |
-| `leader`+cc          | comment out block using block comment |
-| `leader`+ci          | invert comments                       |
+    | Command              | Description                           |
+    |----------------------|---------------------------------------|
+    | `leader`+ci\<space\> | toggle block                          |
+    | `leader`+cc          | comment out block                     |
+    | `leader`+cn          | comment out block, force nesting      |
+    | `leader`+cc          | comment out block using block comment |
+    | `leader`+ci          | invert comments                       |
 
 ### vim-go
 
@@ -250,40 +251,40 @@ tbd http://vimregex.com/
 
 * https://github.com/plasticboy/vim-markdown
 
-| Command | Description |
-| ------- | ----------- |
-| :TableFormat | format table under cursor |
-| :Toc    | create a quickfix vertical window navigable table of contents with the headers |
+    | Command | Description |
+    | ------- | ----------- |
+    | :TableFormat | format table under cursor |
+    | :Toc    | create a quickfix vertical window navigable table of contents with the headers |
 
 ### vim-markdown-toc
 
 * https://github.com/mzlogin/vim-markdown-toc
 
-| Command          | Description                      |
-|------------------|----------------------------------|
-| :GenTocGFM       | Generate toc in GFM link style.  |
-| :GenTocRedcarpet | Generate toc in red carpet style |
+    | Command          | Description                      |
+    |------------------|----------------------------------|
+    | :GenTocGFM       | Generate toc in GFM link style.  |
+    | :GenTocRedcarpet | Generate toc in red carpet style |
 
 ### vim-tabular
 
 * https://github.com/godlygeek/tabular
 
-| Command     | Description                           |
-|-------------|---------------------------------------|
-| :Tabluar /, | create table for colon separated text |
+    | Command     | Description                           |
+    |-------------|---------------------------------------|
+    | :Tabluar /, | create table for colon separated text |
 
 ### fzf.vim
 
 * https://github.com/junegunn/fzf.vim
 
-| Command           | Description            |
-|-------------------|------------------------|
-| :Files            | files                  |
-| :GFiles, :GFiles? | git files, git status  |
-| :Colors           | Color themes           |
-| :Buffers          | Open buffers           |
-| :Commits          | Git commmit (fugitive) |
-| :Command          | List commands          |
+    | Command           | Description            |
+    |-------------------|------------------------|
+    | :Files            | files                  |
+    | :GFiles, :GFiles? | git files, git status  |
+    | :Colors           | Color themes           |
+    | :Buffers          | Open buffers           |
+    | :Commits          | Git commmit (fugitive) |
+    | :Command          | List commands          |
 
 ### fugitive
 * https://github.com/tpope/vim-fugitive

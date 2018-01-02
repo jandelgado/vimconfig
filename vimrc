@@ -9,7 +9,7 @@ se t_Co=256
 
 " *** general settings
 se mouse=                       " turn off mouse
-se tags=tags;/
+se tags=./tags,tags
 let mapleader=","               " change map leader to , key
 nnoremap - :
 
@@ -69,7 +69,7 @@ set wildmenu
 " buffer navigation
 nnoremap <F12>   :bn<CR>      " next buffer
 nnoremap <F11>   :bp<CR>      " previous buffer
-nnoremap <F5>    :buffers<CR>:buffer<Space>
+nnoremap <F5>    :Buffers<CR>
 
 " navigation in quickfix list
 nnoremap ö :cnext<CR>
@@ -188,4 +188,7 @@ nnoremap <silent> <Leader>`        :Marks<CR>
 "omap <leader><tab> <plug>(fzf-maps-o)
 "
 set rtp+=~/.fzf
+
+" *** tagbar
+nmap <F8> :TagbarToggle<CR>
 
