@@ -113,7 +113,8 @@ command TrimWS :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>
 " *** solarized
 "let g:solarized_termcolors=256
 "colorscheme solarized
-"se background=dark " order has an effect on colors - looks better for me
+"
+se background=dark " order has an effect on colors - looks better for me
 
 " *** gruvbox
 colorscheme gruvbox
