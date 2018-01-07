@@ -6,8 +6,7 @@ if [ ! -f $FLAGFILE ]; then
   # this is the first time install
   if [ -f ~/.vimrc ]; then
     echo "you already have an .vimrc file. will not install new one."
-    echo "installation aborted"
-    exit 1
+    exit 0
   fi
 
   ln -s ~/.vim/vimrc ~/.vimrc
