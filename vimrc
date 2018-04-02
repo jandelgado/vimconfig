@@ -8,8 +8,8 @@ filetype plugin indent on
 se t_Co=256
 
 " *** general settings
-se mouse=                       " turn off mouse
-se tags=./tags,tags
+se mouse=a                       
+se tags=./tags;,tags;
 let mapleader=","               " change map leader to , key
 nnoremap - :
 
