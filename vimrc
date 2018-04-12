@@ -23,7 +23,18 @@ se shiftwidth=4
 se expandtab
 se softtabstop=0
 se smarttab
+"se textwidth=79
 autocmd FileType make setlocal noexpandtab
+
+" python settings
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \  softtabstop=4
+    \  shiftwidth=4
+    \  expandtab
+    \  autoindent
+    \  fileformat=unix
+    \  encoding=utf-8
 
 se pastetoggle=<F2>
 se number
@@ -31,6 +42,11 @@ se so=2     " scroll offset
 se hidden
 se backspace=indent,eol,start
 se autoindent
+
+" Enable folding, use <space> to fold/unfold
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 " file search
 se path+=**
@@ -56,9 +72,14 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
+" diff buffer with original file
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
 " jump to tag
-nnoremap ü <C-]>
-nnoremap Ü <C-T>
+" nnoremap ü <C-]>
+" nnoremap Ü <C-O>
+nnoremap ü :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
+nnoremap Ü <C-O>
 
 " CTRL-T is next tab
 "noremap <C-T> gt
@@ -92,8 +113,29 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+let g:netrw_list_hide= '.*\.swp$,.*\~$'
+"map <silent> <F3> :Lexplore<CR>
 
-map <silent> <F3> :Lexplore<CR>
+" Toggle Vexplore with Ctrl-E
+function! ToggleVExplorer()
+  if exists("t:expl_buf_num")
+      let expl_win_num = bufwinnr(t:expl_buf_num)
+      if expl_win_num != -1
+          let cur_win_nr = winnr()
+          exec expl_win_num . 'wincmd w'
+          close
+          exec cur_win_nr . 'wincmd w'
+          unlet t:expl_buf_num
+      else
+          unlet t:expl_buf_num
+      endif
+  else
+      exec '1wincmd w'
+      Vexplore
+      let t:expl_buf_num = bufnr("%")
+  endif
+endfunction
+map <silent> <F3> :call ToggleVExplorer()<CR>
 
 "augroup ProjectDrawer
 "  autocmd!
@@ -113,7 +155,7 @@ command TrimWS :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>
 " *** solarized
 "let g:solarized_termcolors=256
 "colorscheme solarized
-"
+
 se background=dark " order has an effect on colors - looks better for me
 
 " *** gruvbox
