@@ -30,6 +30,7 @@ General notes:
 * [diff](#diff)
 * [Help](#help)
 * [netrw](#netrw)
+* [Spell checker](#spell-checker)
 * [Misc](#misc)
 * [Custom commands](#custom-commands)
 * [Plugins](#plugins)
@@ -193,6 +194,16 @@ tbd http://vimregex.com/
 |-------------------------------|-------------------------------|
 | :Explore, :Sexplore,:Vexplore | Open netrw file browser       |
 | `F3`, :Lexplore               | ` custom` toggle netrw window |
+
+## Spell checker
+
+| Command                         | Description               |
+|---------------------------------|---------------------------|
+| :setlocal spell spelllang=de_de | Start spell checker       |
+| ]s, [s                          | Next, previous wrong word |
+| zg                              | Add word to spellfile     |
+| z=                              | Correct word under cursor |
+
 
 ## Misc
 
