@@ -8,7 +8,7 @@ filetype plugin indent on
 se t_Co=256
 
 " *** general settings
-se mouse=a                       
+se mouse=
 se tags=./tags;,tags;
 let mapleader=","               " change map leader to , key
 nnoremap - :
@@ -61,6 +61,10 @@ se undolevels=1000
 
 se backup
 se noswapfile
+
+" keep visual selection on shift operations
+vnoremap < <gv
+vnoremap > >gv
 
 " set whitspace characters to show with 'set list' command
 " <leader>w to toggle visibility
@@ -235,3 +239,11 @@ set rtp+=~/.fzf
 " *** tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" *** vim-test
+let test#strategy = "dispatch"
+
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
