@@ -149,7 +149,6 @@ map <silent> <F3> :call ToggleVExplorer()<CR>
 " activate matchit plugin
 source $VIMRUNTIME/macros/matchit.vim   
 
-syntax on
 
 " *** custom commands  
 
@@ -247,3 +246,7 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+syntax on
+syntax sync minlines=1000
+
