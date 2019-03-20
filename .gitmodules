@@ -22,7 +22,7 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
-[submodule "vim-markdown-toc"]
+[submodule "bundle/vim-markdown-toc"]
 	path = vim-markdown-toc
 	url = https://github.com/mzlogin/vim-markdown-toc
 [submodule "bundle/vim-markdown-toc"]
@@ -34,7 +34,7 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule "/home/jdelgado/.vim/bundle/lightline.vim"]
+[submodule "bundle/lightline.vim"]
 	path = /home/jdelgado/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
 [submodule "bundle/lightline.vim"]
@@ -55,3 +55,7 @@
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish
+[submodule "bundle/vim-test"]
+	path = bundle/vim-test
+	url = https://github.com/janko/vim-test
+
