@@ -1,7 +1,10 @@
+autoload/plug.vim
 colors/
 *~
 .netrwhist
 .jdvc-installed
+plugged/
+bundle/
 bundle/vim-6502
 bundle/m6502
 bundle/undotree

@@ -1,6 +1,29 @@
-" list of disabled plugins
-let g:pathogen_disabled = ['vim-airline', 'solarized']
-execute pathogen#infect()
+" one-time " initialize vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" load plugins
+call plug#begin()
+Plug 'fatih/vim-go',
+"Plug 'janko/vim-test',
+Plug 'scrooloose/nerdcommenter',
+Plug 'w0rp/ale',
+Plug 'tpope/vim-fugitive',
+Plug 'tpope/vim-abolish',
+Plug 'tpope/vim-surround',
+Plug 'plasticboy/vim-markdown',
+Plug 'mzlogin/vim-markdown-toc',
+Plug 'godlygeek/tabular',
+Plug 'itchyny/lightline.vim',
+Plug 'junegunn/fzf.vim',
+Plug 'Chiel92/vim-autoformat',
+Plug 'morhetz/gruvbox',
+Plug 'majutsushi/tagbar',
+call plug#end()
+
 filetype plugin indent on
 
 " note: set TERM to screen-256color when using tmux
