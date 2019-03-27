@@ -3,8 +3,6 @@
 This is my personal vim configuration, with plugins managed by the vim-plug
 plugin manager.
 
-![screenshot](screenshot.png)
-
 See
 
 * [Cheat-Sheet](CheatSheet.md)
