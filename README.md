@@ -19,6 +19,7 @@ for details.
 * Plug 'tpope/vim-fugitive',
 * Plug 'tpope/vim-abolish',
 * Plug 'tpope/vim-surround',
+* Plug 'tpope/vim-dispatch',
 * Plug 'plasticboy/vim-markdown',
 * Plug 'mzlogin/vim-markdown-toc',
 * Plug 'godlygeek/tabular',
@@ -27,6 +28,7 @@ for details.
 * Plug 'Chiel92/vim-autoformat',
 * Plug 'morhetz/gruvbox',
 * Plug 'majutsushi/tagbar',
+* Plug 'mgedmin/coverage-highlight.vim'
 
 ## Installation
 

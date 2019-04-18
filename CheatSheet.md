@@ -42,6 +42,8 @@ General notes:
     * [vim-tabular](#vim-tabular)
     * [fzf.vim](#fzfvim)
     * [fugitive](#fugitive)
+    * [coverage-highlight](#coverage-highlight)
+    * [vim-test, makegreen](#vim-test-makegreen)
 
 <!-- vim-markdown-toc -->
 
@@ -298,8 +300,21 @@ tbd http://vimregex.com/
     | :Command          | List commands          |
 
 ### fugitive
+
 * https://github.com/tpope/vim-fugitive
+ * :Gstatus, :Glog, :GBlame, :Gdiff, :Ggrep, :Gcommit, :Gread (git checkout -- file), :Git
 
- * Gstatus, Glog, GBlame, Gdiff, Ggrep, Gcommit, Gread (git checkout -- file), Git
+### coverage-highlight
 
+Highlight python test coverage.
+
+* https://github.com/mgedmin/coverage-highlight.vim
+ * :HighlightCoverage, :HighlightCoverageOff, :HighlightCoverageForAll 
+
+### vim-test, makegreen
+
+* https://github.com/janko/vim-test
+ * :TestFile, :TestSuite, :TestNearest, :TestLast, :TestVisit
+ * :MakeGreen %
+ * `let test#strategy = "makegreen"  " or "dispatch"`
 

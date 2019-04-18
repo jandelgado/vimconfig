@@ -7,13 +7,19 @@ endif
 
 " load plugins
 call plug#begin()
+Plug 'fisadev/vim-isort',
 Plug 'fatih/vim-go',
-"Plug 'janko/vim-test',
+Plug 'janko/vim-test',
+Plug 'reinh/vim-makegreen',
+Plug 'mgedmin/coverage-highlight.vim',
 Plug 'scrooloose/nerdcommenter',
 Plug 'w0rp/ale',
+Plug 'airblade/vim-gitgutter',
 Plug 'tpope/vim-fugitive',
 Plug 'tpope/vim-abolish',
 Plug 'tpope/vim-surround',
+Plug 'tpope/vim-dispatch',
+Plug 'tpope/vim-vinegar'
 Plug 'plasticboy/vim-markdown',
 Plug 'mzlogin/vim-markdown-toc',
 Plug 'godlygeek/tabular',
@@ -21,7 +27,7 @@ Plug 'itchyny/lightline.vim',
 Plug 'junegunn/fzf.vim',
 Plug 'Chiel92/vim-autoformat',
 Plug 'morhetz/gruvbox',
-Plug 'majutsushi/tagbar',
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 filetype plugin indent on
@@ -34,7 +40,6 @@ se t_Co=256
 se mouse=
 se tags=./tags;,tags;
 let mapleader=","               " change map leader to , key
-nnoremap - :
 
 " mark colum 79
 highlight MyLineTooLongMarker ctermbg=magenta
@@ -58,6 +63,7 @@ au BufNewFile,BufRead *.py
     \  autoindent
     \  fileformat=unix
     \  encoding=utf-8
+    \  foldmethod=indent
 
 se pastetoggle=<F2>
 se number
@@ -135,15 +141,14 @@ nmap <silent> <leader>ev :e  $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_list_hide= '.*\.swp$,.*\~$'
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"let g:netrw_list_hide= '.*\.swp$,.*\~$'
 "map <silent> <F3> :Lexplore<CR>
 
-" Toggle Vexplore with Ctrl-E
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
       let expl_win_num = bufwinnr(t:expl_buf_num)
@@ -262,7 +267,13 @@ set rtp+=~/.fzf
 nmap <F8> :TagbarToggle<CR>
 
 " *** vim-test
-let test#strategy = "dispatch"
+" use vim-dispatch as execution environment
+"let test#strategy = 'dispatch'
+let test#strategy = 'makegreen'
+let test#python#runner = 'pytest'
+
+" *** coverage-highlight.vim (python)
+let g:coverage_script = 'coverage'
 
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
