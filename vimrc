@@ -64,6 +64,9 @@ au BufNewFile,BufRead *.py
     \  fileformat=unix
     \  encoding=utf-8
     \  foldmethod=indent
+    \  foldnestmax=2
+" vim-autoformat
+let g:formatters_python = ['yapf']
 
 se pastetoggle=<F2>
 se number
@@ -277,10 +280,12 @@ let g:coverage_script = 'coverage'
 
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
-" add yaml stuffs
+" add yaml stuff
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 syntax on
 syntax sync minlines=1000
+
+
 
