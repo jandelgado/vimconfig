@@ -7,10 +7,10 @@ endif
 
 " load plugins
 call plug#begin()
-Plug 'fisadev/vim-isort',
+Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go',
 Plug 'janko/vim-test',
-Plug 'reinh/vim-makegreen',
+"Plug 'reinh/vim-makegreen',
 Plug 'mgedmin/coverage-highlight.vim',
 Plug 'scrooloose/nerdcommenter',
 Plug 'w0rp/ale',
@@ -271,8 +271,8 @@ nmap <F8> :TagbarToggle<CR>
 
 " *** vim-test
 " use vim-dispatch as execution environment
-"let test#strategy = 'dispatch'
-let test#strategy = 'makegreen'
+let test#strategy = 'dispatch'
+"let test#strategy = 'makegreen'
 let test#python#runner = 'pytest'
 
 " *** coverage-highlight.vim (python)
@@ -288,4 +288,11 @@ syntax on
 syntax sync minlines=1000
 
 
+" *** vim-editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+" *** ale fixers. Run with :ALEFix
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['isort'],
+\}
