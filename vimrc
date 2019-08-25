@@ -7,6 +7,7 @@ endif
 
 " load plugins
 call plug#begin()
+Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go',
 Plug 'janko/vim-test',
@@ -50,7 +51,7 @@ se tabstop=4
 se shiftwidth=4
 se expandtab
 se softtabstop=0
-se smarttab
+"se smarttab
 "se textwidth=79
 autocmd FileType make setlocal noexpandtab
 
@@ -109,7 +110,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 " diff buffer with original file
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+" command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 " jump to tag
 " nnoremap ü <C-]>
@@ -208,6 +209,7 @@ let g:go_metalinter_autosave = 0    " don't run meta linter on save
 let g:go_metalinter_enabled = ['vet', 'golint']
 "let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
 autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
 autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
 autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>
@@ -215,9 +217,6 @@ autocmd FileType go nnoremap <leader>v  :GoVet<CR>
 autocmd FileType go nnoremap <leader>l  :GoAlternate<CR>
 autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
 autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
-
-" *** CtrlP
-" nnoremap <leader>. :CtrlPTag<cr>
 
 " *** vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -286,7 +285,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 syntax on
 syntax sync minlines=1000
-
+let c_minlines = 1000
 
 " *** vim-editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
