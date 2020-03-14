@@ -8,14 +8,21 @@ endif
 " load plugins
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'preservim/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go',
 Plug 'janko/vim-test',
+
+Plug 'pangloss/vim-javascript'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 "Plug 'reinh/vim-makegreen',
 Plug 'mgedmin/coverage-highlight.vim',
 Plug 'scrooloose/nerdcommenter',
 Plug 'w0rp/ale',
-Plug 'airblade/vim-gitgutter',
+"Plug 'airblade/vim-gitgutter',
 Plug 'tpope/vim-fugitive',
 Plug 'tpope/vim-abolish',
 Plug 'tpope/vim-surround',
@@ -144,34 +151,6 @@ aug END
 nmap <silent> <leader>ev :e  $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" netrw
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 25
-"let g:netrw_list_hide= '.*\.swp$,.*\~$'
-"map <silent> <F3> :Lexplore<CR>
-
-function! ToggleVExplorer()
-  if exists("t:expl_buf_num")
-      let expl_win_num = bufwinnr(t:expl_buf_num)
-      if expl_win_num != -1
-          let cur_win_nr = winnr()
-          exec expl_win_num . 'wincmd w'
-          close
-          exec cur_win_nr . 'wincmd w'
-          unlet t:expl_buf_num
-      else
-          unlet t:expl_buf_num
-      endif
-  else
-      exec '1wincmd w'
-      Vexplore
-      let t:expl_buf_num = bufnr("%")
-  endif
-endfunction
-map <silent> <F3> :call ToggleVExplorer()<CR>
 
 "augroup ProjectDrawer
 "  autocmd!
@@ -284,8 +263,8 @@ au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 syntax on
-syntax sync minlines=1000
-let c_minlines = 1000
+syntax sync minlines=5000
+let c_minlines = 5000
 
 " *** vim-editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -295,3 +274,11 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort'],
 \}
+
+" treat ino, pde as cpp
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
+" *** nerdtree
+map - :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
