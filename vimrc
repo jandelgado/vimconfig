@@ -36,6 +36,7 @@ Plug 'junegunn/fzf.vim',
 Plug 'Chiel92/vim-autoformat',
 Plug 'morhetz/gruvbox',
 Plug 'majutsushi/tagbar'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -92,6 +93,7 @@ nnoremap <space> za
 se path+=**
 
 " searching
+se ignorecase
 se smartcase    " ignore case when lowercase, case-sensitve otherwise
 se hlsearch
 se incsearch
@@ -199,6 +201,11 @@ autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
 
 " *** vim-markdown
 let g:vim_markdown_folding_disabled = 1
+autocmd FileType markdown set conceallevel=2
+let g:vim_markdown_conceal_code_blocks=0
+let g:vim_markdown_follow_anchor=1
+let g:vim_markdown_auto_insert_bullets=0
+let g:vim_markdown_strikethrough=1
 
 " *** nerd commenter
 " Add spaces after comment delimiters by default
