@@ -37,6 +37,8 @@ Plug 'Chiel92/vim-autoformat',
 Plug 'morhetz/gruvbox',
 Plug 'majutsushi/tagbar'
 Plug 'rust-lang/rust.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
 call plug#end()
 
 filetype plugin indent on
@@ -189,7 +191,8 @@ let g:go_metalinter_autosave = 0    " don't run meta linter on save
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_enabled = ['vet', 'golint']
 "let g:go_list_type = "quickfix"
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gofmt"
 let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
 autocmd FileType go nnoremap <leader>f  :GoFmt<CR>
 autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
@@ -241,7 +244,7 @@ nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
 xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
 nnoremap <silent> <Leader>`        :Marks<CR>
 "imap <c-x><c-k> <plug>(fzf-complete-word)
-"imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-f> <plug>(fzf-complete-path)
 "inoremap <expr> <c-x><c-d> fzf#vim#complete#path('blsd')
 "imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 "imap <c-x><c-l> <plug>(fzf-complete-line)
@@ -288,4 +291,9 @@ autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " *** nerdtree
 map - :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" *** spell checking
+se spelllang=de_de
+hi clear SpellBad
+hi SpellBad cterm=underline
 
