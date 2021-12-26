@@ -7,6 +7,7 @@ endif
 
 " load plugins
 call plug#begin()
+Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
@@ -32,6 +33,7 @@ Plug 'plasticboy/vim-markdown',
 Plug 'mzlogin/vim-markdown-toc',
 Plug 'godlygeek/tabular',
 Plug 'itchyny/lightline.vim',
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
 Plug 'Chiel92/vim-autoformat',
 Plug 'morhetz/gruvbox',
@@ -281,4 +283,6 @@ autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " *** nerdtree
 map - :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+set visualbell
 
