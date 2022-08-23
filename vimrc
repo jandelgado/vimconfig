@@ -15,23 +15,23 @@ Plug 'fatih/vim-go',
 Plug 'janko/vim-test',
 
 Plug 'pangloss/vim-javascript'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 "Plug 'reinh/vim-makegreen',
 Plug 'mgedmin/coverage-highlight.vim',
 Plug 'scrooloose/nerdcommenter',
 Plug 'w0rp/ale',
 "Plug 'airblade/vim-gitgutter',
-Plug 'tpope/vim-fugitive',
+"Plug 'tpope/vim-fugitive',
 Plug 'tpope/vim-abolish',
 Plug 'tpope/vim-surround',
 Plug 'tpope/vim-dispatch',
 Plug 'tpope/vim-vinegar'
-Plug 'plasticboy/vim-markdown',
+Plug 'preservim/vim-markdown',
 Plug 'mzlogin/vim-markdown-toc',
-Plug 'godlygeek/tabular',
+"Plug 'godlygeek/tabular',
 Plug 'itchyny/lightline.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
@@ -39,7 +39,7 @@ Plug 'Chiel92/vim-autoformat',
 Plug 'morhetz/gruvbox',
 Plug 'majutsushi/tagbar'
 Plug 'rust-lang/rust.vim'
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 Plug 'michal-h21/vim-zettel'
 call plug#end()
 
