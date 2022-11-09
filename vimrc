@@ -7,13 +7,12 @@ endif
 
 " load plugins
 call plug#begin()
-Plug 'elixir-editors/vim-elixir'
+"Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go',
 Plug 'janko/vim-test',
-
 Plug 'pangloss/vim-javascript'
 " Plug 'prettier/vim-prettier', {
 "   \ 'do': 'yarn install',
@@ -23,15 +22,15 @@ Plug 'pangloss/vim-javascript'
 Plug 'mgedmin/coverage-highlight.vim',
 Plug 'scrooloose/nerdcommenter',
 Plug 'w0rp/ale',
-"Plug 'airblade/vim-gitgutter',
-"Plug 'tpope/vim-fugitive',
+Plug 'airblade/vim-gitgutter',
+Plug 'tpope/vim-fugitive',
 Plug 'tpope/vim-abolish',
 Plug 'tpope/vim-surround',
 Plug 'tpope/vim-dispatch',
 Plug 'tpope/vim-vinegar'
 Plug 'preservim/vim-markdown',
 Plug 'mzlogin/vim-markdown-toc',
-"Plug 'godlygeek/tabular',
+Plug 'godlygeek/tabular',
 Plug 'itchyny/lightline.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
@@ -40,7 +39,8 @@ Plug 'morhetz/gruvbox',
 Plug 'majutsushi/tagbar'
 Plug 'rust-lang/rust.vim'
 "Plug 'vimwiki/vimwiki'
-Plug 'michal-h21/vim-zettel'
+"Plug 'michal-h21/vim-zettel'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 filetype plugin indent on
@@ -79,10 +79,14 @@ au BufNewFile,BufRead *.py
     \  foldmethod=indent
     \  foldnestmax=2
 " vim-autoformat
-let g:formatters_python = ['yapf']
+"let g:formatters_python = ['yapf']
+let g:formatters_python = ['black']
 
 se pastetoggle=<F2>
-se number
+se number relativenumber
+" toggle line numbers on/off
+nnoremap <leader>n :se number! relativenumber!<CR>   
+
 se so=2     " scroll offset
 se hidden
 se backspace=indent,eol,start
@@ -97,7 +101,6 @@ nnoremap <space> za
 se path+=**
 
 " searching
-se ignorecase
 se smartcase    " ignore case when lowercase, case-sensitve otherwise
 se hlsearch
 se incsearch
@@ -156,7 +159,8 @@ aug END
 " quickly edit/reload vimrc file
 nmap <silent> <leader>ev :e  $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
+" leader+h: history
+nmap <silent> <leader>h :His<CR>
 
 "augroup ProjectDrawer
 "  autocmd!
@@ -203,6 +207,9 @@ autocmd FileType go nnoremap <leader>v  :GoVet<CR>
 autocmd FileType go nnoremap <leader>l  :GoAlternate<CR>
 autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
 autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
+" go auto completion. use with ^X + ^O
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " *** vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -211,6 +218,14 @@ let g:vim_markdown_conceal_code_blocks=0
 let g:vim_markdown_follow_anchor=1
 let g:vim_markdown_auto_insert_bullets=0
 let g:vim_markdown_strikethrough=1
+let g:vim_markdown_follow_anchor = 1
+
+" format lists correctly with `gq`
+" see https://github.com/preservim/vim-markdown/issues/232
+autocmd FileType markdown
+    \ set formatoptions-=q |
+    \ set formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*\[-*+]\\s\\+
+
 
 " *** nerd commenter
 " Add spaces after comment delimiters by default
@@ -299,4 +314,7 @@ se spelllang=de_de
 hi clear SpellBad
 hi SpellBad cterm=underline
 set visualbell
+
+" *** https://github.com/justinmk/vim-sneak
+let g:sneak#label = 1
 
