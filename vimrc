@@ -21,7 +21,7 @@ Plug 'pangloss/vim-javascript'
 "Plug 'reinh/vim-makegreen',
 Plug 'mgedmin/coverage-highlight.vim',
 Plug 'scrooloose/nerdcommenter',
-Plug 'w0rp/ale',
+Plug 'dense-analysis/ale',
 Plug 'airblade/vim-gitgutter',
 Plug 'tpope/vim-fugitive',
 Plug 'tpope/vim-abolish',
@@ -34,7 +34,8 @@ Plug 'godlygeek/tabular',
 Plug 'itchyny/lightline.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
-Plug 'Chiel92/vim-autoformat',
+"Plug 'Chiel92/vim-autoformat',
+Plug 'sbdchd/neoformat'
 Plug 'morhetz/gruvbox',
 Plug 'majutsushi/tagbar'
 Plug 'rust-lang/rust.vim'
@@ -301,6 +302,9 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort'],
 \}
+
+" let ale parse makefile for compiler setting
+let g:ale_c_parse_makefile = 1
 
 " treat ino, pde as cpp
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
