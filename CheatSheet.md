@@ -97,7 +97,7 @@ The location list ist local to a window while the quickfix list is global (i.e. 
 |-----------------------|----------------------------------------------|
 | :copen [height], :ccl | open quick fix window/close                  |
 | :lopen [height], :lcl | open location list for current window/close  |
-| `M`-N, `M`-M          | `custom` next, previous element in quicklist |
+| Ö, ö                  | `custom` next, previous element in quicklist |
 | `leader`-a            | `custom` close quicklist                     |
 
 ## Registers
