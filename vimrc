@@ -5,15 +5,20 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" utf-8 byte sequence
+set encoding=utf-8
+
 " load plugins
 call plug#begin()
 "Plug 'elixir-editors/vim-elixir'
+Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go',
+"Plug 'sebdah/vim-delve'
 Plug 'janko/vim-test',
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 " Plug 'prettier/vim-prettier', {
 "   \ 'do': 'yarn install',
 "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -34,14 +39,16 @@ Plug 'godlygeek/tabular',
 Plug 'itchyny/lightline.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
-"Plug 'Chiel92/vim-autoformat',
+Plug 'Chiel92/vim-autoformat',
 Plug 'sbdchd/neoformat'
 Plug 'morhetz/gruvbox',
 Plug 'majutsushi/tagbar'
 Plug 'rust-lang/rust.vim'
 "Plug 'vimwiki/vimwiki'
 "Plug 'michal-h21/vim-zettel'
-Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'josa42/coc-go'
 call plug#end()
 
 filetype plugin indent on
@@ -142,9 +149,9 @@ set laststatus=2
 set wildmenu
 
 " buffer navigation
-nnoremap <F12>   :bn<CR>      " next buffer
-nnoremap <F11>   :bp<CR>      " previous buffer
-nnoremap <F5>    :Buffers<CR>
+nnoremap <leader>n   :bn<CR>      " next buffer
+nnoremap <leader>p   :bp<CR>      " previous buffer
+nnoremap <leader>b    :Buffers<CR>
 
 " navigation in quickfix list
 nnoremap ö :cnext<CR>
@@ -170,7 +177,6 @@ nmap <silent> <leader>h :His<CR>
 
 " activate matchit plugin
 source $VIMRUNTIME/macros/matchit.vim   
-
 
 " *** custom commands  
 
@@ -206,8 +212,8 @@ autocmd FileType go nnoremap <leader>r  :w<CR>:GoRun<CR>
 autocmd FileType go nnoremap <leader>t  :w<CR>:GoTest<CR>
 autocmd FileType go nnoremap <leader>v  :GoVet<CR>
 autocmd FileType go nnoremap <leader>l  :GoAlternate<CR>
-autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
-autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
+"autocmd FileType go nnoremap <leader>b  :w<CR>:GoBuild<CR>
+"autocmd FileType go nnoremap <leader>i  :w<CR>:GoInstall<CR>
 " go auto completion. use with ^X + ^O
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
@@ -237,9 +243,9 @@ let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 
 " used to debug vim synax files: place cursor on word and press F10
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+"\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+"\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " *** lightline
 let g:lightline = {
@@ -298,13 +304,25 @@ let c_minlines = 5000
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " *** ale fixers. Run with :ALEFix
+
+" disable ale LSP functionality because we use coc-vim
+let g:ale_disable_lsp = 1
+
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort'],
+\   'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines']
+\}
+
+let g:ale_linters = {
+\  'rust': ['analyzer'],
 \}
 
 " let ale parse makefile for compiler setting
 let g:ale_c_parse_makefile = 1
+" As-you-type autocomplete
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_completion_enabled = 1
 
 " treat ino, pde as cpp
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
@@ -321,4 +339,12 @@ set visualbell
 
 " *** https://github.com/justinmk/vim-sneak
 let g:sneak#label = 1
+
+" *** Rust
+" https://blog.logrocket.com/configuring-vim-rust-development/
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+
+source ~/.vim/vim-coc
 
